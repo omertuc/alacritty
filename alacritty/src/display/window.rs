@@ -186,9 +186,9 @@ impl Window {
         let is_wayland = false;
 
         let windowed_context =
-            create_gl_window(window_builder.clone(), event_loop, false, !is_wayland, size)
+            create_gl_window(window_builder.clone(), event_loop, false, false, size)
                 .or_else(|_| {
-                    create_gl_window(window_builder, event_loop, true, !is_wayland, size)
+                    create_gl_window(window_builder, event_loop, true, false, size)
                 })?;
 
         // Text cursor.
